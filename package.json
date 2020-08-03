@@ -1,0 +1,21 @@
+{
+  "name": "proffy",
+  "version": "1.0.0",
+  "description": "Study online with the best teachers",
+  "repository": "https://github.com/gabrielribeirof/proffy.git",
+  "author": "Gabriel Ribeiro <ogabrielribeirof@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "typescript": "^3.9.7"
+  }
+}
