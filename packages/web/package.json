@@ -10,16 +10,17 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
     "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "react-refresh": "^0.8.3",
-    "styled-components": "^5.1.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
