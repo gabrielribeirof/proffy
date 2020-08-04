@@ -23,7 +23,8 @@
   ],
   "rules": {
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
-    "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }]
+    "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "settings": {
     "import/resolver": {
