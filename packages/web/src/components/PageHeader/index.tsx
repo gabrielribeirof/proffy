@@ -8,10 +8,9 @@ import { Container, Top, Content } from './styles';
 
 interface PageHeaderProps {
   title: string;
-  children: React.ReactNode
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title, children }: PageHeaderProps) => (
+const PageHeader: React.FC<PageHeaderProps> = (props) => (
   <Container>
     <Top>
       <Link to="/">
@@ -20,8 +19,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, children }: PageHeaderPr
       <img src={logoImage} alt="Proffy" />
     </Top>
     <Content>
-      <b>{title}</b>
-      {children}
+      <b>{props.title}</b>
+      {props.children}
     </Content>
   </Container>
 );
