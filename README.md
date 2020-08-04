@@ -18,9 +18,25 @@
 
 ---
 
-## :pushpin: About
+## :star2: About
 
-The three applications (backend, web app and mobile app) were made on the Next Level Week #2, by [Rocketseat](https://rocketseat.com.br).
+The three applications (backend, web and mobile) were made on the Next Level Week #2, by [Rocketseat](https://github.com/Rocketseat).
+
+#### :open_file_folder: Secondary packages
+- **eslint-config**: eslint configuration for the entire monorepo
+- **axios-config**: global axios api
+
+## :computer: Web
+
+Based on [React](https://reactjs.org) with [Typescript](https://typescriptlang.com).
+
+#### :rocket: Main packages used:
+
+- React: Library for creating interactive UIs
+- React Router: Creates React navagable routes 
+- Styled-components: Stylized React components 
+- Babel: Compilation 
+- Webpack: Compress
 
 ## :clipboard: License
 
