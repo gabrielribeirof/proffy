@@ -25,6 +25,9 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              outputPath: 'assets',
+            },
           },
         ],
       },
@@ -42,8 +45,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
+      template: path.resolve(__dirname, 'public', 'index.html')
     }),
-    isDevelopment && new ReactRefreshWebpackPlugin(),
+    isDevelopment && new ReactRefreshWebpackPlugin()
   ].filter(Boolean),
 };
