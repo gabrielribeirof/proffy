@@ -8,8 +8,8 @@ export default createGlobalStyle`
     --color-primary: #8257E5;
     --color-primary-dark: #774DD6;
     --color-primary-darker: #6842C2;
-    --color-secundary: #04D361;
-    --color-secundary-dark: #04BF58;
+    --color-secundary: #218825;
+    --color-secundary-dark: #094a0c;
     --color-title-in-primary: #FFFFFF;
     --color-text-in-primary: #D4C2FF;
     --color-text-title: #32264D;
