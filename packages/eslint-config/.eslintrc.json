@@ -22,6 +22,8 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off",
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
     "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
     "jsx-a11y/label-has-associated-control": "off"
