@@ -41,7 +41,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js',
+    filename: 'assets/js/[hash].js',
+
   },
   plugins: [
     new HtmlWebpackPlugin({
