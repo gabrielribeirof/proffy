@@ -38,6 +38,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     port: 4000,
+    host: "0.0.0.0"
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
