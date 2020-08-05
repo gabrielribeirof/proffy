@@ -26,6 +26,8 @@
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
     "jsx-a11y/label-has-associated-control": "off"
   },
