@@ -42,11 +42,19 @@ export const Top = styled.div`
 export const Content = styled.div`
   width: 90%;
   margin: 32px auto;
+  padding-bottom: 18px;
 
   b {
     max-width: 350px;
     font: 700 36px Archivo;
     color: var(--color-title-in-primary);
+  }
+
+  p {
+    max-width: 300px;
+    margin-top: 24px;
+    font-size: 16px;
+    color: var(--color-text-in-primary);
   }
 
   @media (min-width: 700px) {
