@@ -32,13 +32,13 @@ export default createGlobalStyle`
   }
 
   #app-mount {
-    height: 100vh;
+    height: 100%;
   }
 
   body,
   input,
   button,
   textarea {
-    font: 500 1.6rem Poppins;
+    font: 500 16px Poppins;
   }
 `;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100%;
   padding: 30px;
 
   display: flex;
@@ -23,10 +22,11 @@ export const Container = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  text-align: center;
   margin-bottom: 20px;
 
   grid-area: logo;
+
+  text-align: center;
 
   img {
     height: 80px;
@@ -41,6 +41,7 @@ export const LogoContainer = styled.div`
 export const HeroImage = styled.img`
   width: 100%;
   height: 100%;
+
   grid-area: hero;
 `;
 

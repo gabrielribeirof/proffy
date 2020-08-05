@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100%;
-
   display: flex;
   flex-direction: column;
+
   background: var(--color-primary);
 
   @media (min-width: 700px) {
@@ -15,13 +14,13 @@ export const Container = styled.div`
 export const Top = styled.div`
   width: 90%;
   margin: 0 auto;
+  padding: 16px 0;
   
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   color: var(--color-text-in-primary);
-  padding: 16px 0;
 
   a {
     height: 32px;
@@ -55,6 +54,7 @@ export const Content = styled.div`
     max-width: 740px;
     margin: 0 auto;
     padding-bottom: 48px;
+
     display: flex;
     flex: 1;
     flex-direction: column;
