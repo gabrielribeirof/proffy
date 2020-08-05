@@ -13,7 +13,7 @@ const TeacherForm: React.FC = () => (
   <Container>
     <PageHeader
       title="How amazing you want to teach"
-      description="Teste"
+      description="The first step is to fill out this registration form"
     />
 
     <main>
@@ -80,7 +80,7 @@ const TeacherForm: React.FC = () => (
             <img src={warningIcon} alt="Aviso importante" />
             Important!
             <br />
-            Fill in all the data
+            Fill in all fields
           </p>
           <button type="submit">Save datas</button>
         </footer>
