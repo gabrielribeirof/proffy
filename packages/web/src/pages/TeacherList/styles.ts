@@ -18,62 +18,25 @@ export const Container = styled.div`
 `;
 
 export const SearchTeachers = styled.form`
+  margin-top: 20px;
+
   label {
     color: var(--color-text-in-primary);
   }
 
   @media (min-width: 700px) {
+    margin-top: 0;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 16px;
 
     position: absolute;
     bottom: -26px;
-  }
-`;
 
-export const InputBlock = styled.div`
-  margin-top: 14px;
-  position: relative;
-
-  :first-child {
-    margin-top: 8px;
-  }
-
-  @media (min-width: 700px) {
-    margin-top: 0;
-
-    :first-child {
+    div + div {
       margin-top: 0;
     }
-  }
-
-  label {
-    font-size: 14px;
-  }
-
-  input {
-    width: 100%;
-    height: 56px;
-    padding: 0 16px;
-    border: 1px solid var(--color-line-in-white);
-    border-radius: 8px;
-    outline: 0;
-
-    background: var(--color-input-background);
-    font: 16px Archivo;
-  }
-
-  :focus-within::after {
-    content: '';
-    width: calc(100% - 32px);
-    height: 2px;
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    bottom: 0;
-
-    background: var(--color-primary-light);
   }
 `;
 
