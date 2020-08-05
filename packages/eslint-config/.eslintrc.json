@@ -22,6 +22,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "camelcase": "off",
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
