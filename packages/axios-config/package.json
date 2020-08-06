@@ -1,0 +1,11 @@
+{
+  "name": "@proffy/axios-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gabrielribeirof/proffy.git",
+  "author": "Gabriel Ribeiro <ogabrielribeirof@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
