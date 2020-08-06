@@ -1,7 +1,7 @@
 {
   "name": "@proffy/eslint-config",
   "version": "1.0.0",
-  "repository": "https://github.com/gabrielribeirof/",
+  "repository": "https://github.com/gabrielribeirof/proffy.git",
   "author": "Gabriel Ribeiro <ogabrielribeirof@gmail.com>",
   "license": "MIT",
   "devDependencies": {
