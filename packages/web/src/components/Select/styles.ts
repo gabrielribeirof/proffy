@@ -25,7 +25,8 @@ export const Container = styled.div`
     outline: 0;
 
     background: var(--color-input-background);
-    font: 16px Archivo;
+    color: var(--color-text-title);
+    font: 16px Poppins;
   }
 
   :focus-within::after {
