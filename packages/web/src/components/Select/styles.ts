@@ -4,10 +4,6 @@ export const Container = styled.div`
   margin-top: 14px;
   position: relative;
 
-  :first-child {
-    margin-top: 0;
-  }
-
   @media (min-width: 700px) {
     :first-child {
       margin-top: 0;
