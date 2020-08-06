@@ -41,7 +41,7 @@ export const Container = styled.article`
   }
 
   footer {
-    padding: 0 20px;
+    padding: 20px;
     margin-top: 32px;
     border-top: 1px solid var(--color-line-in-white);
 
@@ -57,13 +57,25 @@ export const Container = styled.article`
     font-size: 16px;
     display: block;
   }
+
+  @media (min-width: 700px) {
+    footer p {
+      display: flex;
+    }
+
+    footer p b {
+      margin-left: 10px;
+    }
+  }
 `;
 
 export const WhatsappButton = styled.button`
   width: 200px;
   height: 56px;
+  margin: 0 10px;
   border: 0;
   border-radius: 8px;
+  outline: none;
 
   display: flex;
   align-items: center;
@@ -72,7 +84,6 @@ export const WhatsappButton = styled.button`
   background: var(--color-secundary);
   color: var(--color-button-text);
   cursor: pointer;
-  font: 700 14px Archivo;
   transition: .2s;
 
   :hover {
