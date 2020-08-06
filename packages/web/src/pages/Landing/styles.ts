@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 30px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,28 +9,46 @@ export const Container = styled.div`
   color: var(--color-text-in-primary);
   background: var(--color-primary);
 
+  section {
+    width: 100%;
+    padding: 20px;
+
+    background: var(--color-background);
+  }
+
   @media (min-width: 1100px) {
+  }
+`;
+
+export const HeroContainer = styled.div`
+  width: 100%;
+  padding: 20px;
+
+  @media (min-width: 1100px) {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+
     display: grid;
-    grid-template-rows: 350px 1fr;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas: 
-      "logo hero hero"
-      "buttons total total";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 350px;
   }
 `;
 
 export const LogoContainer = styled.div`
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  grid-area: logo;
-
-  text-align: center;
+  padding: 0 90px;
 
   img {
-    height: 80px;
+    height: 100px;
   }
 
   h2 {
+    max-width: 220px;
+    margin: 0;
     font-weight: 500;
     font-size: 22px;
   }
@@ -41,8 +57,6 @@ export const LogoContainer = styled.div`
 export const HeroImage = styled.img`
   width: 100%;
   height: 100%;
-
-  grid-area: hero;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -51,7 +65,6 @@ export const ButtonsContainer = styled.div`
 
   display: flex;
   justify-content: center;
-  grid-area: buttons;
 
   a {
     width: 300px;
@@ -101,7 +114,8 @@ export const TotalConnections = styled.div`
   align-items: center;
   justify-content: center;
 
-  grid-area: total;
+  color: var(--color-text-base);
+  font-size: 14px;
 
   img {
     margin-right: 8px;
