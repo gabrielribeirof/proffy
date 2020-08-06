@@ -20,7 +20,7 @@ export const Container = styled.div`
 
 export const Box = styled.div`
   width: 100%;
-  margin-top: -32px;
+  margin-top: -28px;
   padding-top: 20px;
   border-radius: 8px;
 
@@ -32,10 +32,6 @@ export const Box = styled.div`
 
   fieldset + fieldset {
     margin-top: 34px;
-  }
-
-  fieldset label {
-    color: var(--color-text-complement);
   }
 
   fieldset legend {
@@ -58,6 +54,7 @@ export const Box = styled.div`
     font: 700 16px Archivo;
     cursor: pointer;
     transition: color .2;
+    outline: none;
   }
 
   fieldset legend button:hover {
@@ -70,7 +67,7 @@ export const Box = styled.div`
 
   footer {
     margin-top: 64px;
-    padding: 40px 24px;
+    padding: 20px 24px;
     border-top: 1px solid var(--color-line-in-white);
 
     background: var(--color-box-footer);
@@ -95,6 +92,7 @@ export const Box = styled.div`
     margin-top: 32px;
     border: 0;
     border-radius: 8px;
+    outline: none;
 
     display: flex;
     align-items: center;
@@ -137,7 +135,7 @@ export const Box = styled.div`
     }
 
     footer {
-      padding: 40px 64px;
+      padding: 20px 64px;
 
       display: flex;
       align-items: center;
