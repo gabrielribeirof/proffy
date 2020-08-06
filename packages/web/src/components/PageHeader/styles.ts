@@ -7,7 +7,7 @@ export const Container = styled.div`
   background: var(--color-primary);
 
   @media (min-width: 700px) {
-    height: 250px;
+    height: 280px;
   }
 `;
 
@@ -42,7 +42,6 @@ export const Top = styled.div`
 export const Content = styled.div`
   width: 90%;
   margin: 32px auto;
-  padding-bottom: 18px;
 
   b {
     max-width: 350px;
@@ -52,7 +51,7 @@ export const Content = styled.div`
 
   p {
     max-width: 300px;
-    margin-top: 24px;
+    margin-top: 12px;
     font-size: 16px;
     color: var(--color-text-in-primary);
   }
@@ -61,7 +60,7 @@ export const Content = styled.div`
     position: relative;
     max-width: 740px;
     margin: 0 auto;
-    padding-bottom: 48px;
+    padding-bottom: 18px;
 
     display: flex;
     flex: 1;
