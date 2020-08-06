@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '@proffy/axios-config';
 import { Link } from 'react-router-dom';
 
 import logoImage from '../../assets/images/logo.svg';
@@ -12,35 +13,49 @@ import {
   Container, LogoContainer, HeroImage, ButtonsContainer, TotalConnections,
 } from './styles';
 
-const Landing: React.FC = () => (
-  <Container>
-    <LogoContainer>
-      <img src={logoImage} alt="Proffy" />
-      <h2>Study online with the best teachers</h2>
-    </LogoContainer>
+const Landing: React.FC = () => {
+  const [connections, setConnections] = useState(0);
 
-    <HeroImage
-      src={landingImage}
-      alt="Study platform"
-    />
+  useEffect(() => {
+    api.get('connections').then((response) => {
+      const { total } = response.data;
 
-    <ButtonsContainer>
-      <Link to="/study" className="study">
-        <img src={studyIcon} alt="Study" />
-        Study
-      </Link>
+      setConnections(total);
+    });
+  }, []);
 
-      <Link to="/give-classes" className="give-classes">
-        <img src={giveClassesIcon} alt="Classes" />
-        Teach
-      </Link>
-    </ButtonsContainer>
+  return (
+    <Container>
+      <LogoContainer>
+        <img src={logoImage} alt="Proffy" />
+        <h2>Study online with the best teachers</h2>
+      </LogoContainer>
 
-    <TotalConnections>
-      <img src={purpleHeartIcon} alt="Heart" />
-      More than 200 connections have already been made
-    </TotalConnections>
-  </Container>
-);
+      <HeroImage
+        src={landingImage}
+        alt="Study platform"
+      />
+
+      <ButtonsContainer>
+        <Link to="/study" className="study">
+          <img src={studyIcon} alt="Study" />
+          Study
+        </Link>
+
+        <Link to="/give-classes" className="give-classes">
+          <img src={giveClassesIcon} alt="Classes" />
+          Teach
+        </Link>
+      </ButtonsContainer>
+
+      <TotalConnections>
+        <img src={purpleHeartIcon} alt="Heart" />
+        {connections}
+        {' '}
+        connections have already been made
+      </TotalConnections>
+    </Container>
+  );
+};
 
 export default Landing;
