@@ -7,23 +7,26 @@ export const Container = styled.div`
   background: var(--color-primary);
 
   @media (min-width: 700px) {
-    height: 280px;
+    height: 300px;
   }
 `;
 
 export const Top = styled.div`
-  width: 90%;
-  margin: 0 auto;
-  padding: 16px 0;
+  width: 100%;
+  height: 65px;
+  padding: 0 10%;
+  border-bottom: 1px solid var(--color-primary-darker);
   
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  background: var(--color-primary-dark);
   color: var(--color-text-in-primary);
 
   a {
-    height: 32px;
+    display: flex;
+    align-items: center;
     transition: opacity .2s;
   }
   a:hover {
@@ -32,10 +35,6 @@ export const Top = styled.div`
 
   img {
     height: 26px;
-  }
-
-  @media (min-width: 700px) {
-    max-width: 1100px;
   }
 `;
 
@@ -60,7 +59,7 @@ export const Content = styled.div`
     position: relative;
     max-width: 740px;
     margin: 0 auto;
-    padding-bottom: 18px;
+    padding-bottom: 28px;
 
     display: flex;
     flex: 1;
