@@ -61,7 +61,12 @@ export const Box = styled.div`
   }
 
   fieldset legend button:hover {
-    color: var(--color-primary-darker);}
+    color: var(--color-primary-darker);
+  }
+
+  fieldset .schedule-item + .schedule-item {
+    margin-top: 60px;
+  }
 
   footer {
     margin-top: 64px;
@@ -81,7 +86,7 @@ export const Box = styled.div`
   }
 
   footer p img {
-    margin-right: 2px;
+    margin-right: 16px;
   }
 
   footer button {
@@ -121,6 +126,10 @@ export const Box = styled.div`
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       column-gap: 16px;
+    }
+
+    fieldset .schedule-item + .schedule-item {
+      margin-top: 14px;
     }
 
     fieldset .schedule-item div {
