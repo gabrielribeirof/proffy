@@ -8,8 +8,8 @@ export default createGlobalStyle`
     --color-primary: #8257E5;
     --color-primary-dark: #774DD6;
     --color-primary-darker: #6842C2;
-    --color-secundary: #218825;
-    --color-secundary-dark: #094a0c;
+    --color-secundary: #04d369;
+    --color-secundary-dark: #04bf58;
     --color-title-in-primary: #FFFFFF;
     --color-text-in-primary: #D4C2FF;
     --color-text-title: #32264D;
@@ -40,5 +40,6 @@ export default createGlobalStyle`
   button,
   textarea {
     font: 500 16px Poppins;
+    color: var(--color-text-base);
   }
 `;
