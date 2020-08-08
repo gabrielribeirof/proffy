@@ -12,6 +12,7 @@
     "@babel/runtime": "^7.11.2",
     "@proffy/axios-config": "*",
     "react": "^16.13.1",
+    "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"
@@ -24,6 +25,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.2",
     "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "react-refresh": "^0.8.3",
