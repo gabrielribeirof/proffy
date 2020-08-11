@@ -12,7 +12,6 @@
     "@babel/runtime": "^7.11.2",
     "@proffy/axios-config": "*",
     "react": "^16.13.1",
-    "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"

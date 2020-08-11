@@ -3,50 +3,8 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
-
-const REACT_APP = /^REACT_APP_/i;
-
-function getClientEnvironment(publicUrl) {
-  const raw = Object.keys(process.env)
-    .filter(key => REACT_APP.test(key))
-    .reduce(
-      (env, key) => {
-        env[key] = process.env[key];
-        return env;
-      },
-      {
-        NODE_ENV: process.env.NODE_ENV || 'development',
-        PUBLIC_URL: publicUrl,
-        WDS_SOCKET_HOST: process.env.WDS_SOCKET_HOST,
-        WDS_SOCKET_PATH: process.env.WDS_SOCKET_PATH,
-        WDS_SOCKET_PORT: process.env.WDS_SOCKET_PORT,
-      }
-    );
-  const stringified = {
-    'process.env': Object.keys(raw).reduce((env, key) => {
-      env[key] = JSON.stringify(raw[key]);
-      return env;
-    }, {}),
-  };
-
-  return { raw, stringified };
-}
-
-const appDirectory = fs.realpathSync(process.cwd());
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
-
-const publicUrlOrPath = getPublicUrlOrPath(
-  process.env.NODE_ENV === 'development',
-  require(resolveApp('package.json')).homepage,
-  process.env.PUBLIC_URL
-);
-
-
-const env = getClientEnvironment(publicUrlOrPath.slice(0, -1));
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
@@ -92,7 +50,6 @@ module.exports = {
         { from: 'public/assets', to: 'assets' },
       ]
     }),
-    new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
     isDevelopment && new ReactRefreshWebpackPlugin()
   ].filter(Boolean)
 };
