@@ -18,6 +18,8 @@
 
 ---
 
+<img src=".github/applications-1.0.0.png" style="border-radius: 6px">
+
 ## :star2: About
 
 The three applications (backend, web and mobile) were made on the Next Level Week #2, by [Rocketseat](https://github.com/Rocketseat).
