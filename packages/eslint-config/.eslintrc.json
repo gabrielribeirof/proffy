@@ -24,6 +24,7 @@
   "rules": {
     "no-alert": "off",
     "camelcase": "off",
+    "object-curly-newline": "off",
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
     "import/prefer-default-export": "off",
     "jsx-a11y/label-has-associated-control": "off",
