@@ -11,7 +11,7 @@ export const Container = styled.div`
   @media (min-width: 700px) {
     main {
       padding: 32px 0;
-      min-width: 740px;
+      max-width: 740px;
       margin: 0 auto;
     } 
   }
