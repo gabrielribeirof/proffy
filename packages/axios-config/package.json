@@ -1,7 +1,7 @@
 {
   "name": "@proffy/axios-config",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "https://github.com/gabrielribeirof/proffy.git",
   "author": "Gabriel Ribeiro <ogabrielribeirof@gmail.com>",
   "license": "MIT",
