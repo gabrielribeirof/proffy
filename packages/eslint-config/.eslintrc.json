@@ -28,6 +28,7 @@
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
     "import/prefer-default-export": "off",
     "jsx-a11y/label-has-associated-control": "off",
+    "@typescript-eslint/no-empty-interface": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
     "react/no-array-index-key": "off",
