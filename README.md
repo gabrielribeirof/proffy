@@ -28,18 +28,6 @@ The three applications (backend, web and mobile) were made on the Next Level Wee
 - *eslint-config*: eslint configuration for the entire monorepo
 - *axios-config*: global axios api
 
-## :computer: Web
-
-Based on **React** with **Typescript**.
-
-#### :rocket: Main packages
-
-- *React*: library for creating interactive UIs
-- *React Router*: creates React navagable routes 
-- *Styled-components*: stylized React components 
-- *Babel*: compilation 
-- *Webpack*: compress
-
 ## :electric_plug: Server
 
 A **RESTful API** created in **Node.js** with **Typescript**.
@@ -47,11 +35,33 @@ A **RESTful API** created in **Node.js** with **Typescript**.
 #### :rocket: Main technologies
 
 - *Node.js*: javascript interpreter
-- *Typescript*: language that adds type in javascript
 - *Express*: standard server structure
 - *SQLite*: embedded database
 - *Knex*: query builder
-- *CORS*: file upload middleware
+- *CORS*: standards for apps to connect
+
+## :computer: Web
+
+Based on **React** with **Typescript**.
+
+#### :rocket: Main packages
+
+- *React*: library for creating interactive UIs
+- *React Router*: creates react navagable routes
+- *Styled-components*: stylized react components
+- *Babel*: compilation
+- *Webpack*: compress
+
+## :iphone: Mobile
+
+Created with **Expo** and **Typescript**.
+
+#### :rocket: Main packages
+
+- *React*: library for creating interactive UIs
+- *React Native*: builds native apps with react
+- *Expo*: platform for make native apps with react
+- *React Navigation*: routing and navigation for react native apps
 
 ## :clipboard: License
 
