@@ -69,7 +69,7 @@ export const Container = styled.article`
   }
 `;
 
-export const WhatsappButton = styled.button`
+export const WhatsappButton = styled.a`
   width: 200px;
   height: 56px;
   margin: 0 10px;
@@ -83,6 +83,7 @@ export const WhatsappButton = styled.button`
   
   background: var(--color-secundary);
   color: var(--color-button-text);
+  text-decoration: none;
   cursor: pointer;
   transition: .2s;
 
