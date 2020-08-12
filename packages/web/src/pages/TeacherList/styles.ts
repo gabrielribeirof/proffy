@@ -22,7 +22,7 @@ export const SearchTeachers = styled.form`
   margin-top: 20px;
 
   label {
-    color: var(--color-text-in-primary);
+    color: ${(props) => props.theme.text.base_purple};
   }
 
   button {
@@ -38,14 +38,14 @@ export const SearchTeachers = styled.form`
     justify-content: center;
     cursor: pointer;
 
-    background: var(--color-secundary);
-    color: var(--color-button-text);
+    background: ${(props) => props.theme.secondary.light};
+    color: ${(props) => props.theme.button.text};
     text-decoration: none;
     transition: background-color .2s;
   }
 
   button:hover {
-    background: var(--color-secundary-dark);
+    background: ${(props) => props.theme.secondary.lighter};
   }
 
   @media (min-width: 700px) {

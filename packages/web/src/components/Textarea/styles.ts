@@ -19,12 +19,12 @@ export const Container = styled.div`
     height: 56px;
     min-height: 16px;
     padding: 12px 16px;
-    border: 1px solid var(--color-line-in-white);
+    border: 1px solid ${(props) => props.theme.line.white};
     border-radius: 8px;
     resize: vertical;
     outline: 0;
 
-    background: var(--color-input-background);
+    background: ${(props) => props.theme.input.background};
     font: 16px Archivo;
   }
 
@@ -37,6 +37,6 @@ export const Container = styled.div`
     right: 16px;
     bottom: 7px;
 
-    background: var(--color-primary-light);
+    background:${(props) => props.theme.primary.lighter};
   }
 `;

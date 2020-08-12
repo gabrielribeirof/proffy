@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.article`
   margin-top: 24px;
-  border: 1px solid var(--color-line-in-white);
+  border: 1px solid ${(props) => props.theme.line.white};
   border-radius: 8px;
 
-  background: var(--color-box-base);
+  background: ${(props) => props.theme.box.base};
   overflow: hidden;
 
   header {
@@ -27,7 +27,7 @@ export const Container = styled.article`
   header div b {
     font: 700 24px Archivo;
     display: block;
-    color: var(--color-text-title);
+    color: ${(props) => props.theme.text.title};
   }
 
   header div span {
@@ -43,17 +43,17 @@ export const Container = styled.article`
   footer {
     padding: 20px;
     margin-top: 32px;
-    border-top: 1px solid var(--color-line-in-white);
+    border-top: 1px solid ${(props) => props.theme.line.white};
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     
-    background: var(--color-box-footer);
+    background: ${(props) => props.theme.box.footer};
   }
 
   footer p b {
-    color: var(--color-primary);
+    color: ${(props) => props.theme.primary.light};
     font-size: 16px;
     display: block;
   }
@@ -81,13 +81,13 @@ export const WhatsappButton = styled.a`
   align-items: center;
   justify-content: space-evenly;
   
-  background: var(--color-secundary);
-  color: var(--color-button-text);
+  background: ${(props) => props.theme.secondary.light};
+  color: ${(props) => props.theme.button.text};
   text-decoration: none;
   cursor: pointer;
   transition: .2s;
 
   :hover {
-    background: var(--color-secundary-dark);
+    background: ${(props) => props.theme.secondary.lighter};
   }
 `;

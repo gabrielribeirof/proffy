@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: var(--color-primary);
+  background: ${(props) => props.theme.primary.lighter};
 
   @media (min-width: 700px) {
     height: 300px;
@@ -15,14 +15,14 @@ export const Top = styled.div`
   width: 100%;
   height: 65px;
   padding: 0 10%;
-  border-bottom: 1px solid var(--color-primary-darker);
+  border-bottom: ${(props) => props.theme.primary.darker};
   
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background: var(--color-primary-dark);
-  color: var(--color-text-in-primary);
+  background: ${(props) => props.theme.primary.dark};
+  color: ${(props) => props.theme.text.base_purple};
 
   a {
     display: flex;
@@ -45,14 +45,14 @@ export const Content = styled.div`
   b {
     max-width: 350px;
     font: 700 36px Archivo;
-    color: var(--color-title-in-primary);
+    color: ${(props) => props.theme.text.title_purple};
   }
 
   p {
     max-width: 300px;
     margin-top: 12px;
     font-size: 16px;
-    color: var(--color-text-in-primary);
+    color: ${(props) => props.theme.text.base_purple};
   }
 
   @media (min-width: 700px) {

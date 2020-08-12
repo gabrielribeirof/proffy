@@ -6,17 +6,13 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: var(--color-text-in-primary);
-  background: var(--color-primary);
+  background: ${(props) => props.theme.primary.lighter};
 
   section {
     width: 100%;
     padding: 20px;
 
-    background: var(--color-background);
-  }
-
-  @media (min-width: 1100px) {
+    background: ${(props) => props.theme.background};
   }
 `;
 
@@ -49,6 +45,8 @@ export const LogoContainer = styled.div`
   h2 {
     max-width: 220px;
     margin: 0;
+
+    color: ${(props) => props.theme.text.base_purple};
     font-weight: 500;
     font-size: 22px;
   }
@@ -77,7 +75,7 @@ export const ButtonsContainer = styled.div`
     align-items: center;
 
     text-decoration: none;
-    color: var(--color-button-text);
+    color: ${(props) => props.theme.button.text};
 
     transition: background-color .2s;
   }
@@ -92,17 +90,17 @@ export const ButtonsContainer = styled.div`
   }
 
   a.study {
-    background: var(--color-primary-lighter);
+    background: ${(props) => props.theme.primary.light};
   }
   a.give-classes {
-    background: var(--color-secundary);
+    background: ${(props) => props.theme.secondary.light};
   }
 
   a.study:hover {
-    background: var(--color-primary-light);
+    background: ${(props) => props.theme.primary.lighter};
   }
   a.give-classes:hover {
-    background: var(--color-secundary-dark);
+    background: ${(props) => props.theme.secondary.lighter};
   }
 `;
 
@@ -114,7 +112,7 @@ export const TotalConnections = styled.div`
   align-items: center;
   justify-content: center;
 
-  color: var(--color-text-base);
+  color: ${(props) => props.theme.text.base};
   font-size: 14px;
 
   img {

@@ -24,7 +24,7 @@ export const Box = styled.div`
   padding-top: 20px;
   border-radius: 8px;
 
-  background: var(--color-box-base);
+  background: ${(props) => props.theme.box.base};
 
   fieldset {
     border: 0;
@@ -37,20 +37,20 @@ export const Box = styled.div`
   fieldset legend {
     width: 100%;
     padding-bottom: 16px;
-    border-bottom: 1px solid var(--color-line-in-white);
+    border-bottom: 1px solid ${(props) => props.theme.line.white};
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     font: 700 24px Archivo;
-    color: var(--color-text-title);
+    color: ${(props) => props.theme.text.title};
   }
 
   fieldset legend button {
     background: none;
     border: 0;
-    color: var(--color-primary);
+    color: ${(props) => props.theme.primary.light};
     font: 700 16px Archivo;
     cursor: pointer;
     transition: color .2;
@@ -58,7 +58,7 @@ export const Box = styled.div`
   }
 
   fieldset legend button:hover {
-    color: var(--color-primary-darker);
+    color: ${(props) => props.theme.primary.darker};
   }
 
   fieldset .schedule-item + .schedule-item {
@@ -68,9 +68,9 @@ export const Box = styled.div`
   footer {
     margin-top: 64px;
     padding: 20px 24px;
-    border-top: 1px solid var(--color-line-in-white);
+    border-top: 1px solid ${(props) => props.theme.line.white};
 
-    background: var(--color-box-footer);
+    background: ${(props) => props.theme.box.footer};
   }
 
   footer p {
@@ -79,7 +79,7 @@ export const Box = styled.div`
     justify-content: center;
 
     font-size: 14px;
-    color: var(--color-text-complement);
+    color: ${(props) => props.theme.text.complement};
   }
 
   footer p img {
@@ -99,14 +99,14 @@ export const Box = styled.div`
     justify-content: center;
     cursor: pointer;
 
-    background: var(--color-secundary);
-    color: var(--color-button-text);
+    background: ${(props) => props.theme.secondary.light};
+    color: ${(props) => props.theme.button.text};
     text-decoration: none;
     transition: background-color .2s;
   }
 
   footer button:hover {
-    background: var(--color-secundary-dark);
+    background: ${(props) => props.theme.secondary.lighter};
   }
 
   @media (min-width: 700px) {

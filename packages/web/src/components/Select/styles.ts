@@ -19,13 +19,13 @@ export const Container = styled.div`
     height: 56px;
     min-height: 16px;
     padding: 12px 16px;
-    border: 1px solid var(--color-line-in-white);
+    border: 1px solid ${(props) => props.theme.line.white};
     border-radius: 8px;
     resize: vertical;
     outline: 0;
 
-    background: var(--color-input-background);
-    color: var(--color-text-title);
+    background: ${(props) => props.theme.input.background};
+    color: ${(props) => props.theme.text.title};
     font: 16px Poppins;
   }
 
@@ -38,6 +38,6 @@ export const Container = styled.div`
     right: 16px;
     bottom: 0;
 
-    background: var(--color-primary-light);
+    background: ${(props) => props.theme.primary.lighter};
   }
 `;
