@@ -1,2 +1,5 @@
 # database
 database.sqlite
+
+# enviroments variables
+.env
