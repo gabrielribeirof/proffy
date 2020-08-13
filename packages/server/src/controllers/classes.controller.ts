@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import db from '../database/connection';
-import convertHourToMinute from '../utils/convertHourToMinutes';
+
+import convertHourToMinutes from '../utils/convert-hour-to-minutes.util';
 
 interface ScheduleItem {
   week_day: number;
@@ -22,17 +23,15 @@ export default {
     const week_day = filters.week_day as string;
     const time = filters.time as string;
 
-    const timeInMinutes = convertHourToMinute(time);
+    const timeInMinutes = convertHourToMinutes(time);
 
     const classes = await db('classes')
-      .whereExists(function () {
-        this.select('class_schedule.*')
-          .from('class_schedule')
-          .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
-          .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
-          .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
-          .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]);
-      })
+      .whereExists(db.select('*')
+        .from('class_schedule')
+        .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
+        .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
+        .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
+        .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]))
       .where('classes.subject', '=', subject)
       .join('users', 'classes.user_id', '=', 'users.id')
       .select(['classes.*', 'users.*']);
@@ -74,8 +73,8 @@ export default {
       const classSchedule = schedule.map((scheduleItem: ScheduleItem) => ({
         class_id,
         week_day: scheduleItem.week_day,
-        from: convertHourToMinute(scheduleItem.from),
-        to: convertHourToMinute(scheduleItem.to),
+        from: convertHourToMinutes(scheduleItem.from),
+        to: convertHourToMinutes(scheduleItem.to),
       }));
 
       await trx('class_schedule').insert(classSchedule);
