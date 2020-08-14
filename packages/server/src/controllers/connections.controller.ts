@@ -3,11 +3,17 @@ import db from '../database/connection';
 
 export default {
   async index(request: Request, response: Response): Promise<Response> {
-    const totalConnections = await db('connections').count('* as total');
+    try {
+      const totalConnections = await db('connections').count('* as total');
 
-    const { total } = totalConnections[0];
+      const { total } = totalConnections[0];
 
-    return response.json({ total });
+      return response.json({ total });
+    } catch (err) {
+      return response.status(400).json({
+        error: 'Unexpected error when trying get connections',
+      });
+    }
   },
 
   async create(request: Request, response: Response): Promise<Response> {
