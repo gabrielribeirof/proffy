@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
-import db from '../database/connection';
 
 import convertHourToMinutes from '../utils/convert-hour-to-minutes.util';
+
+import db from '../database/connection';
 
 interface ScheduleItem {
   week_day: number;
@@ -13,38 +14,40 @@ export default {
   async index(request: Request, response: Response): Promise<Response> {
     const filters = request.query;
 
-    if (!filters.week_day || !filters.subject || !filters.time) {
+    try {
+      if (!filters.week_day || !filters.subject || !filters.time) {
+        return response.status(400).json({
+          error: 'Missing filters to list classes',
+        });
+      }
+
+      const subject = filters.subject as string;
+      const week_day = filters.week_day as string;
+      const time = filters.time as string;
+
+      const timeInMinutes = convertHourToMinutes(time);
+
+      const classes = await db('classes')
+        .whereExists(db.select('*')
+          .from('class_schedule')
+          .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
+          .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
+          .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
+          .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]))
+        .where('classes.subject', '=', subject)
+        .join('users', 'classes.user_id', '=', 'users.id')
+        .select(['classes.*', 'users.name', 'users.avatar', 'users.bio', 'users.whatsapp']);
+
+      return response.json(classes);
+    } catch (err) {
       return response.status(400).json({
-        error: 'Missing filters to list classes',
+        error: 'Unexpected error when trying get classes',
       });
     }
-
-    const subject = filters.subject as string;
-    const week_day = filters.week_day as string;
-    const time = filters.time as string;
-
-    const timeInMinutes = convertHourToMinutes(time);
-
-    const classes = await db('classes')
-      .whereExists(db.select('*')
-        .from('class_schedule')
-        .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
-        .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
-        .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
-        .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]))
-      .where('classes.subject', '=', subject)
-      .join('users', 'classes.user_id', '=', 'users.id')
-      .select(['classes.*', 'users.*']);
-
-    return response.send(classes);
   },
 
   async create(request: Request, response: Response): Promise<Response> {
     const {
-      name,
-      avatar,
-      whatsapp,
-      bio,
       subject,
       cost,
       schedule,
@@ -53,21 +56,14 @@ export default {
     const trx = await db.transaction();
 
     try {
-      const insertedUsersIds = await trx('users').insert({
-        name,
-        avatar,
-        whatsapp,
-        bio,
-      });
-
-      const user_id = insertedUsersIds[0];
+      const user = await trx('users').where('id', request.payload.id);
+      const user_id = user[0].id;
 
       const insertedClassesIds = await trx('classes').insert({
         subject,
         cost,
         user_id,
       });
-
       const class_id = insertedClassesIds[0];
 
       const classSchedule = schedule.map((scheduleItem: ScheduleItem) => ({
