@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 
-import db from '../database/connection';
+import { generateToken } from '../utils/generate-token.util';
 
-import { generateToken } from '../utils/json-web-token.util';
+import db from '../database/connection';
 
 export default {
   async create(request: Request, response: Response): Promise<Response> {
@@ -50,11 +50,7 @@ export default {
       user[0].password = undefined;
 
       return response.json({
-        token: generateToken({
-          data: {
-            id: user[0].id,
-          },
-        }),
+        token: generateToken(user[0].id),
       });
     } catch (err) {
       return response.status(400).json({

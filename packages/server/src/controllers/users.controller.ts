@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 
-import { generateToken } from '../utils/json-web-token.util';
+import { generateToken } from '../utils/generate-token.util';
 
 import db from '../database/connection';
 
@@ -14,9 +14,9 @@ export default {
       avatar,
     } = request.body;
 
-    const passwordHash = await bcrypt.hash(password, 8);
-
     try {
+      const passwordHash = await bcrypt.hash(password, 8);
+
       const emailExists = await db('users').where('email', email);
 
       if (emailExists[0]) {
@@ -33,13 +33,8 @@ export default {
       });
 
       const user_id = insertedUsersIds[0];
-
       return response.status(201).send({
-        token: generateToken({
-          data: {
-            id: user_id,
-          },
-        }),
+        token: generateToken(String(user_id)),
       });
     } catch (err) {
       return response.status(400).json({
