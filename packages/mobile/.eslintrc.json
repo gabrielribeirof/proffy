@@ -1,5 +1,6 @@
 {
   "rules": {
+    "object-curly-newline": "off",
     "import/no-extraneous-dependencies": "off",
     "react/style-prop-object": "off"
   }
