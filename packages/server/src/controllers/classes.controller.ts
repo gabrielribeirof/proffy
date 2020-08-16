@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 
+import AppError from '../errors/app.error';
 import convertHourToMinutes from '../utils/convert-hour-to-minutes.util';
 
 import db from '../database/connection';
@@ -10,7 +11,7 @@ interface ScheduleItem {
   to: string;
 }
 
-export default {
+export default class ClassesController {
   async index(request: Request, response: Response): Promise<Response> {
     const filters = request.query;
 
@@ -40,11 +41,9 @@ export default {
 
       return response.json(classes);
     } catch (err) {
-      return response.status(400).json({
-        error: 'Unexpected error when trying get classes',
-      });
+      throw new AppError('Unexpected error when trying get classes', 400);
     }
-  },
+  }
 
   async create(request: Request, response: Response): Promise<Response> {
     const {
@@ -81,9 +80,7 @@ export default {
     } catch (err) {
       await trx.rollback();
 
-      return response.status(400).json({
-        error: 'Unexpected error when creating new class',
-      });
+      throw new AppError('Unexpected error when creating new class', 400);
     }
-  },
-};
+  }
+}

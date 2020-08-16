@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
+import AppError from '../errors/app.error';
 import authConfig from '../config/auth.config';
 
 interface ITokenPayload {
@@ -48,8 +49,6 @@ export default (
 
     return next();
   } catch (err) {
-    return response.status(400).json({
-      error: 'Unexpected error in authentication',
-    });
+    throw new AppError('Unexpected error in authentication', 400);
   }
 };

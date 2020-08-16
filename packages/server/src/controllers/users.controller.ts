@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 
+import AppError from '../errors/app.error';
 import { generateToken } from '../utils/generate-token.util';
 
 import db from '../database/connection';
 
-export default {
+export default class UsersController {
   async create(request: Request, response: Response): Promise<Response> {
     const {
       name,
@@ -20,9 +21,7 @@ export default {
       const emailExists = await db('users').where('email', email);
 
       if (emailExists[0]) {
-        return response.status(400).json({
-          error: 'Email already used',
-        });
+        throw new AppError('Email already used', 400);
       }
 
       const insertedUsersIds = await db('users').insert({
@@ -37,9 +36,7 @@ export default {
         token: generateToken(String(user_id)),
       });
     } catch (err) {
-      return response.status(400).json({
-        error: 'Unexpected error when creating new user',
-      });
+      throw new AppError('Unexpected error when creating new user', 400);
     }
-  },
-};
+  }
+}

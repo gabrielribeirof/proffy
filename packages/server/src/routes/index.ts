@@ -1,22 +1,27 @@
 import express from 'express';
 
-import SessionController from '../controllers/session.controller';
+import SessionsController from '../controllers/sessions.controller';
 import UsersController from '../controllers/users.controller';
 import ClassesController from '../controllers/classes.controller';
 import ConnectionsController from '../controllers/connections.controller';
 
-import AuthMiddleware from '../middlewares/auth.middleware';
+import authMiddleware from '../middlewares/auth.middleware';
+
+const sessionsController = new SessionsController();
+const usersController = new UsersController();
+const classesController = new ClassesController();
+const connectionsController = new ConnectionsController();
 
 const routes = express.Router();
 
-routes.post('/login', SessionController.create);
+routes.post('/login', sessionsController.create);
 
-routes.post('/users', AuthMiddleware, UsersController.create);
+routes.post('/users', authMiddleware, usersController.create);
 
-routes.get('/classes', ClassesController.index);
-routes.post('/classes', AuthMiddleware, ClassesController.create);
+routes.get('/classes', classesController.index);
+routes.post('/classes', authMiddleware, classesController.create);
 
-routes.get('/connections', ConnectionsController.index);
-routes.post('/connections', ConnectionsController.create);
+routes.get('/connections', connectionsController.index);
+routes.post('/connections', connectionsController.create);
 
 export default routes;
