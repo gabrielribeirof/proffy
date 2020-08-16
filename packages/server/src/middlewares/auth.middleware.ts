@@ -19,24 +19,18 @@ export default (
 
   try {
     if (!authorization) {
-      return response.status(401).json({
-        error: 'Token not provided',
-      });
+      throw new AppError('Token not provided', 401);
     }
 
     const parts = authorization.split(' ');
     const [scheme, token] = parts;
 
     if (parts.length !== 2) {
-      return response.status(401).json({
-        error: 'Token error',
-      });
+      throw new AppError('Token error', 401);
     }
 
     if (!/^Bearer$/i.test(scheme)) {
-      return response.status(401).json({
-        error: 'Token malformatted',
-      });
+      throw new AppError('Token malformatted', 401);
     }
 
     const decodedPayload = jwt.verify(token, authConfig.jwt.secret);
