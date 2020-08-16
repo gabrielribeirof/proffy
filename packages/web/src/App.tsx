@@ -1,14 +1,18 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import AppContext from './contexts';
 import Routes from './routes';
 import GlobalStyles from './styles/global';
 
-const App = () => (
+const App: React.FC = () => (
   <AppContext>
     <Routes />
     <GlobalStyles />
   </AppContext>
 );
 
-export default App;
+ReactDOM.render(
+  <App />,
+  document.getElementById('app-mount'),
+);
