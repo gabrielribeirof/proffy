@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import api from '@proffy/axios-config';
 import { Link } from 'react-router-dom';
+import api from '@proffy/axios-config';
 
 import logoImage from '../../assets/images/logo.svg';
 import landingImage from '../../assets/images/landing.svg';
