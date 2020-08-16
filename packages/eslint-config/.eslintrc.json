@@ -23,6 +23,7 @@
   ],
   "rules": {
     "no-alert": "off",
+    "no-console": "off",
     "camelcase": "off",
     "import/extensions": ["error", { "ts": "never", "tsx": "never" }],
     "import/prefer-default-export": "off",
